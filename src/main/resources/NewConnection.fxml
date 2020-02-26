@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="rootLayout" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vincent.h.controller.NewConnectionController">
+   <children>
+      <GridPane alignment="CENTER" layoutX="70.0" layoutY="110.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="127.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="493.0" minWidth="10.0" prefWidth="473.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="连接名" />
+            <Label text="服务类型" GridPane.rowIndex="1" />
+            <Label text="host" GridPane.rowIndex="2" />
+            <Label text="password" GridPane.rowIndex="3" />
+            <JFXTextField fx:id="name" GridPane.columnIndex="1" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <JFXRadioButton selected="true" text="单机">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="typeRadioGroup" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton text="集群" toggleGroup="$typeRadioGroup" />
+               </children>
+            </HBox>
+            <JFXTextField fx:id="hostAndPort" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <JFXTextField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <JFXButton onAction="#submit" style="-fx-background-color: #bababa;" text="确定" />
+                  <JFXButton onAction="#cancel" style="-fx-background-color: #bababa;" text="取消" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
